@@ -45,7 +45,7 @@ export default async (req, res) => {
         await fs.unlink(convertedFilePath);
       } catch (error) {
         console.log('error', error)
-        res.status(500).json({ error: 'Error converting audio.',error:error });
+        res.status(500).json({ error: 'Error convertiggfgng audio.',error:error });
       }
     });
   } else {
