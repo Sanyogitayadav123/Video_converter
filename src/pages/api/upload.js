@@ -11,12 +11,14 @@ export const config = {
 };
 
 export default async (req, res) => {
+  console.log("api")
   if (req.method === 'POST') {
     const convertAudio = async (filePath, outputFormat) => {
       return new Promise((resolve, reject) => {
         const outputPath = `/tmp/output.${outputFormat}`;
         exec(`ffmpeg -i ${filePath} ${outputPath}`, (error) => {
           if (error) {
+            console.log("error",error)
             reject(error);
           } else {
             resolve(outputPath);
