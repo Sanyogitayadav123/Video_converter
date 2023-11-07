@@ -29,7 +29,7 @@ export default async (req, res) => {
 
     fileHandlingMiddleware(req, res, async (err) => {
       if (err) {
-        return res.status(500).json({ error: 'Error uploading file.' });
+        return res.status(500).json({ error: 'Error uploading file.',error:err });
       }
 
       try {
@@ -45,7 +45,7 @@ export default async (req, res) => {
         await fs.unlink(convertedFilePath);
       } catch (error) {
         console.log('error', error)
-        res.status(500).json({ error: 'Error converting audio.' });
+        res.status(500).json({ error: 'Error converting audio.',error:error });
       }
     });
   } else {
