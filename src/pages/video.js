@@ -35,6 +35,7 @@ const VideoUploader = () => {
   
   return (
     <div>
+
       <form onSubmit={handleUpload}>
         <input type="file" ref={fileRef} accept="" required />
         <button type="submit" className='p-2 bg-green-500 text-white'>Download</button>
